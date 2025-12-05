@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 class TCalc {
-    private List<String> items = new ArrayList<>();
+    private List<String> names = new ArrayList<>();
     private int tPercentage = 0;
 
     public List<String> addPerson(List<String> names, String name) {
@@ -54,7 +54,22 @@ class FP4r {
         List<String> l1 = new ArrayList<>();
         l1 = list1.addPerson(l1,"Ринат");
         System.out.println("Размер чаевых для l1: " + list1.getTPercentage(l1));
-        List <String> l2 = l1;
-        l2 = l1 = list1.addPerson(l2,"Юрий");
+        List <String> l2 = new ArrayList<>();
+		for (int i=0;i<10;i++)
+        	l2 = list1.addPerson(l2,"Юрий");
+		System.out.println("Размер чаевых для l1: " + list1.getTPercentage(l2));
+		//Тестирование чистой функции getTPercentage() для 3х вариантов
+		//пустой список:
+		List<String> l3 = new ArrayList<>();
+		if (list1.getTPercentage(l3) == 0)
+			System.out.println("Работает правильно");
+		else 
+			System.out.println("Ошибка");
+		if (list1.getTPercentage(l1) == 0)
+			System.out.println("Работает правильно");
+		else 
+			System.out.println("Ошибка");
+		//Список > 5 человек
+
     }
 }
